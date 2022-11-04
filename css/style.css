@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+body {
+  background-color: hsl(233deg, 47%, 7%);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: "Inter", sans-serif;
+}
+
+.card {
+  background-color: hsl(244deg, 38%, 16%);
+  display: flex;
+  flex-direction: column;
+  width: 36ch;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card .card-image {
+  position: relative;
+}
+.card .card-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(280deg, 90%, 40%, 0.7);
+}
+.card .card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card .card-content {
+  padding: clamp(1.875rem, 0.89rem + 4.81vw, 4.5rem);
+  text-align: center;
+}
+.card .card-content h1 {
+  font-size: clamp(1.6875rem, 1.34rem + 1.72vw, 2.625rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
+  margin-block-end: 0.5em;
+}
+.card .card-content h1 strong {
+  color: hsl(277deg, 64%, 61%);
+}
+.card .card-content p {
+  font-size: clamp(0.9375rem, 0.87rem + 0.34vw, 1.125rem);
+  color: hsla(0deg, 0%, 100%, 0.75);
+  line-height: 1.6;
+}
+.card .card-content ul {
+  display: flex;
+  flex-direction: column;
+}
+.card .card-content ul li {
+  margin-block-start: 2.5em;
+}
+.card .card-content ul li h2 {
+  color: hsl(0deg, 0%, 100%);
+  font-size: clamp(1.40625rem, 1.23rem + 0.86vw, 1.875rem);
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+.card .card-content ul li span {
+  color: hsla(0deg, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 0.64rem + 0.52vw, 1.03125rem);
+}
+
+@media screen and (min-width: 601px) {
+  .card {
+    flex-direction: row-reverse;
+    gap: 0;
+    width: min(100%, 1200px);
+  }
+  .card > * {
+    flex: 1;
+    min-width: 50%;
+  }
+  .card .card-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .card .card-content {
+    text-align: left;
+  }
+  .card .card-content > * + * {
+    margin-block-start: 1.5em;
+  }
+  .card .card-content h1 {
+    line-height: 1.25;
+    margin: 0;
+  }
+  .card .card-content ul {
+    flex-direction: row;
+    gap: min(-1.76rem + 8.59vw, 4.6875rem);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

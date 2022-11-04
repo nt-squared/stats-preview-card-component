@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+@import "variables";
+
+body {
+    background-color: $clr-main-bg;
+    font-family: $ff-body;
+    font-weight: $fw-400;
+    font-size: $fs-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    font-family: $ff-heading;
+}
+
+.card {
+    background-color: $clr-card-bg;
+    display: flex;
+    flex-direction: column;
+    width: 36ch;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & .card-image {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: hsla(280, 90%, 40%, 0.7);
+        }
+
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    & .card-content {
+        padding: clamp(1.875rem, calc(0.89rem + 4.81vw), 4.50rem);
+        text-align: center;
+
+        & h1 {
+            font-size: clamp(1.6875rem, calc(1.34rem + 1.72vw), 2.625rem);
+            line-height: 1.2;
+            font-weight: $fw-700;
+            color: $clr-main-heading;
+            margin-block-end: .5em;
+
+            & strong {
+                color: $clr-accent;
+            }
+        }
+
+        & p {
+            font-size: clamp(0.9375rem, calc(0.87rem + 0.34vw), 1.125rem);
+            color: $clr-paragraph;
+            line-height: 1.6;
+        }
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+
+            & li {
+                margin-block-start: 2.5em;
+    
+                & h2 {
+                    color: $clr-main-heading;
+                    font-size: clamp(1.40625rem, calc(1.23rem + 0.86vw), 1.875rem);
+                    font-weight: $fw-700;
+                    margin-bottom: 0.25em;
+                }
+    
+                & span {
+                    color: $clr-main-stats;
+                    text-transform: uppercase;
+                    font-size: clamp(0.75rem, calc(0.64rem + 0.52vw), 1.03125rem)
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .card {
+        flex-direction: row-reverse;
+        gap: 0;
+        width: min(100%, 1200px);
+        
+        & > * {
+            flex: 1;
+            min-width: 50%;
+        }
+
+        & .card-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        & .card-content {
+            text-align: left;
+
+            & > * + * {
+                margin-block-start: 1.5em;
+            }
+
+            & h1 {
+                line-height: 1.25;
+                margin: 0;
+            }
+
+            & ul {
+                flex-direction: row;
+                gap: min(calc(-1.76rem + 8.59vw), 4.6875rem);
+            }
+        }
+    }
+}
