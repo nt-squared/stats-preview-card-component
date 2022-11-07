@@ -26,18 +26,14 @@ h1, h2 {
 
     & .card-image {
         position: relative;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: hsla(280, 90%, 40%, 0.7);
-        }
+        background-color: $clr-accent;
 
         & img {
             display: block;
             width: 100%;
             height: auto;
+            opacity: 0.8;
+            mix-blend-mode: multiply;
         }
     }
 
@@ -70,7 +66,7 @@ h1, h2 {
             & li {
                 margin-block-start: 2.5em;
     
-                & h2 {
+                & p {
                     color: $clr-main-heading;
                     font-size: clamp(1.40625rem, calc(1.23rem + 0.86vw), 1.875rem);
                     font-weight: $fw-700;
@@ -89,9 +85,9 @@ h1, h2 {
 
 @media screen and (min-width: 601px) {
     .card {
+        width: min(100%, 1200px);
         flex-direction: row-reverse;
         gap: 0;
-        width: min(100%, 1200px);
         
         & > * {
             flex: 1;

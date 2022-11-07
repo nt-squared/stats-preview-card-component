@@ -24,17 +24,14 @@ h1, h2 {
 }
 .card .card-image {
   position: relative;
-}
-.card .card-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: hsla(280deg, 90%, 40%, 0.7);
+  background-color: hsl(277deg, 64%, 61%);
 }
 .card .card-image img {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
 }
 .card .card-content {
   padding: clamp(1.875rem, 0.89rem + 4.81vw, 4.5rem);
@@ -62,7 +59,7 @@ h1, h2 {
 .card .card-content ul li {
   margin-block-start: 2.5em;
 }
-.card .card-content ul li h2 {
+.card .card-content ul li p {
   color: hsl(0deg, 0%, 100%);
   font-size: clamp(1.40625rem, 1.23rem + 0.86vw, 1.875rem);
   font-weight: 700;
